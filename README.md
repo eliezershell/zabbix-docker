@@ -9,5 +9,7 @@ chmod +x ./docker/instalador_docker.sh
 ```
 ## Subindo os containers
 ```bash
+git clone https://github.com/eliezershell/zabbix.git
+cd zabbix
 docker compose up -d
 ```
