@@ -19,7 +19,7 @@ services:
 
   zabbix-server:
     image: zabbix/zabbix-server-mysql:alpine-7.4-latest
-    container_name: zabbix-server-mysql
+    container_name: zabbix-server
     restart: unless-stopped
     environment:
       DB_SERVER_HOST: mysql-server
@@ -34,7 +34,7 @@ services:
   
   zabbix-frontend:
     image: zabbix/zabbix-web-nginx-mysql:alpine-7.4-latest
-    container_name: zabbix-web-nginx-mysql
+    container_name: zabbix-frontend
     restart: unless-stopped
     environment:
       ZBX_SERVER_HOST: zabbix-server-mysql
