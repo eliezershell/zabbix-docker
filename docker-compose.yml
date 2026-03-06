@@ -43,6 +43,8 @@ services:
       MYSQL_USER: zabbix
       MYSQL_PASSWORD: zabbix_pwd
       MYSQL_ROOT_PASSWORD: root_pwd
+      expose:
+        - "8080"
 
   reverse-proxy:
     build: ./nginx
