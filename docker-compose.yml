@@ -47,7 +47,7 @@ services:
       - "8080:8080"
 
   reverse-proxy:
-    image: nginx
+    build: ./nginx
     container_name: reverse-proxy
     restart: unless-stopped
     ports:
