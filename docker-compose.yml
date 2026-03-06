@@ -44,7 +44,17 @@ services:
       MYSQL_PASSWORD: zabbix_pwd
       MYSQL_ROOT_PASSWORD: root_pwd
     ports:
-      - "80:8080"
+      - "8080:8080"
+
+  reverse-proxy:
+    image: nginx
+    container_name: reverse-proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - zabbix-frontend
 
 volumes:
   mysql_data:
