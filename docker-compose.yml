@@ -17,7 +17,7 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
 
-  zabbix-server-mysql:
+  zabbix-server:
     image: zabbix/zabbix-server-mysql:alpine-7.4-latest
     container_name: zabbix-server-mysql
     restart: unless-stopped
@@ -32,7 +32,7 @@ services:
     depends_on:
       - mysql-server
   
-  zabbix-web-nginx-mysql:
+  zabbix-frontend:
     image: zabbix/zabbix-web-nginx-mysql:alpine-7.4-latest
     container_name: zabbix-web-nginx-mysql
     restart: unless-stopped
