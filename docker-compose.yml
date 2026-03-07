@@ -1,7 +1,6 @@
 services:
   mysql-server:
     image: mysql:8.0-oracle@sha256:a3dff78d876222746a0bacc36dd7e4bf9e673c85fb7ee0d12ed25bd32c43c19b
-    container_name: mysql-server
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: zabbix
@@ -19,7 +18,6 @@ services:
 
   zabbix-server:
     image: zabbix/zabbix-server-mysql:alpine-7.4-latest@sha256:39aef12921f6e4572984164164ab1cbb7acc2058e349ff1fb622b48f0280e2f3
-    container_name: zabbix-server
     restart: unless-stopped
     environment:
       DB_SERVER_HOST: mysql-server
@@ -34,7 +32,6 @@ services:
   
   zabbix-frontend:
     image: zabbix/zabbix-web-nginx-mysql:alpine-7.4-latest@sha256:374bc99b4cf49191c3fbd6c78fd5c8cecd1cb5963b73638aacc46ea6759204a5
-    container_name: zabbix-frontend
     restart: unless-stopped
     environment:
       ZBX_SERVER_HOST: zabbix-server
@@ -48,7 +45,6 @@ services:
 
   reverse-proxy:
     build: ./nginx
-    container_name: reverse-proxy
     restart: unless-stopped
     ports:
       - "80:80"
