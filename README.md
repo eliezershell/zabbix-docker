@@ -2,10 +2,8 @@
 Este repositório sobe um ambiente Zabbix completo para TESTES (MySQL, Zabbix Server e Frontend Web) utilizando Docker Compose.
 ## Dependências
 ```bash
-sudo apt update -y
 git clone https://github.com/eliezershell/docker.git
-chmod +x ./docker/instalador_docker.sh
-./docker/instalador_docker.sh
+bash ./docker/install.sh
 ```
 ## Gerando Certificado TLS/SSL
 ```bash
