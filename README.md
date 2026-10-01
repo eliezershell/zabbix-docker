@@ -11,7 +11,7 @@ openssl req -x509 -nodes -days 365 \
 -newkey rsa:2048 \
 -keyout privkey.pem \
 -out cert.pem \
--subj "/C=country/ST=state/L=city/O=XPTO Inc./OU=Observability/CN=zabbix.eliezer.cloud" \
+-subj "/C=country/ST=state/L=locality/O=organization/OU=organizationUnit/CN=zabbix.eliezer.cloud" \
 -addext "subjectAltName=DNS:zabbix.eliezer.cloud"
 ```
 ## Subindo os containers
